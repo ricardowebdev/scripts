@@ -2,10 +2,10 @@
 if [ $FILE -eq 1 ] 
 then
     FIM=$(date '+%Y/%m/%d %H:%M:%S');
-    DATA="data/"$(date -d 'today' '+%d-%m-%Y')".data";
-    >> ./$DATA;
+    DATA="/opt/monitor/"$(date -d 'today' '+%d-%m-%Y')".data";
+    >> $DATA;
 
-    echo $INICIO > ./$DATA;
+    echo $INICIO > $DATA;
 
     LINHA=$MEMTOTAL;
     LINHA=$LINHA";"$MAXMEM2;
@@ -14,7 +14,7 @@ then
     LINHA=$LINHA";"$CPUMEM;
     LINHA=$LINHA";"$MEMMEM;
     LINHA=$LINHA";"$PROCMEM;
-    echo $LINHA >> ./$DATA;
+    echo $LINHA >> $DATA;
 
     LINHA=$SWAPTOTAL;
     LINHA=$LINHA";"$MAXSWAP2;
@@ -23,7 +23,7 @@ then
     LINHA=$LINHA";"$CPUSWAP;
     LINHA=$LINHA";"$MEMSWAP;
     LINHA=$LINHA";"$PROCSWAP;
-    echo $LINHA >> ./$DATA;
+    echo $LINHA >> $DATA;
 
     LINHA=$CORES;
     LINHA=$LINHA";"$MAXCPU;
@@ -32,13 +32,13 @@ then
     LINHA=$LINHA";"$CPUCPU;
     LINHA=$LINHA";"$MEMCPU;
     LINHA=$LINHA";"$PROCCPU;        
-    echo $LINHA >> ./$DATA;
+    echo $LINHA >> $DATA;
 
     LINHA=$STAPACHE";"$STMYSQL;
-    echo $LINHA >> ./$DATA;
+    echo $LINHA >> $DATA;
 
     LINHA=$HDTOTAL";"$HDUSED";"$HDFREE;
-    echo $LINHA >> ./$DATA;
+    echo $LINHA >> $DATA;
 
-    echo $FIM >> ./$DATA;        
+    echo $FIM >> $DATA;        
 fi

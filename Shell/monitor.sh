@@ -12,6 +12,18 @@ INICIO=$(date '+%Y/%m/%d %H:%M:%S');
 STAPACHE="(running)";
 STMYSQL="(running)";
 
+# pegando a quantidade de nucleos do server
+COUNT=$(cat /proc/cpuinfo | grep cores | awk '{print $4}');
+arr=$(echo $COUNT | tr " " "\n")
+
+#Quebrando o array em variaveis e somando os cores
+for i in $arr
+do
+    CORES=$(($CORES + $i))
+done
+# Formatando o total de cores calculados
+CORES=$CORES".00";
+
 # Executa o script principal
 while true;
 do
@@ -28,6 +40,6 @@ do
     source ./maxvalues.sh; #Calcula os maiores valores armazenados
     source ./writefile.sh;
 
-    sleep 2 
+    sleep 10 
     clear   
 done

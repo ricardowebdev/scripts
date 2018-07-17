@@ -1,14 +1,4 @@
-<?php
-    $file     = "data/".date('d-m-Y').'.data';
-    $dados    = file($file);
-    $inicio   = $dados[0];
-    $memoria  = explode(";", $dados[1]);
-    $swap     = explode(";", $dados[2]);
-    $cpu      = explode(";", $dados[3]);
-    $servicos = explode(";", $dados[4]);
-    $hd       = explode(";", $dados[5]);
-    $fim      = $dados[6];
-?>
+<?php require_once 'Service/service.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dados Monitorados</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/mdb.min.css">
-    <link rel="stylesheet" href="font-awesome.min.css">    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">    
 </head>
 <body style="background-color: #212121">
     <div class="container-fluid">
@@ -281,14 +271,12 @@
             </div>
         </div>                  
     </div>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
     <script>
         setTimeout(function() {window.location.reload()}, 60000);
     </script>
 </body>
 </html>
-
-

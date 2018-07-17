@@ -1,15 +1,3 @@
-# pegando a quantidade de nucleos do server
-COUNT=$(cat /proc/cpuinfo | grep cores | awk '{print $4}');
-arr=$(echo $COUNT | tr " " "\n")
-
-#Quebrando o array em variaveis e somando os cores
-for i in $arr
-do
-    CORES=$(($CORES + $i))
-done
-# Formatando o total de cores calculados
-CORES=$CORES".00";
-
 echo "================================= Uso dos processadores ================================";
 echo "";
 
