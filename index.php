@@ -91,6 +91,38 @@
                                 </div>
 
                                 <div class="col-md-1"></div>            
+                            </div><br>
+
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h1 class="text-white text-center">Informações do Server</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <table class="table table-hover table-striped table-bordered text-center">
+                                        <thead class="text-white success-color-dark">
+                                            <tr class="text-white text-center">
+                                                <th>Server</th>
+                                                <th>Ip</th>
+                                                <th>Release</th>
+                                                <th>Distro</th>
+                                                <th>Users</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-white text-center">
+                                                <td><?= $server[0]; ?></td>
+                                                <td><?= $server[1]; ?></td>
+                                                <td><?= $server[3]; ?></td>
+                                                <td><?= $server[4]; ?></td>
+                                                <td><?= $server[2]; ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-1"></div>
                             </div>
                         </div>
 

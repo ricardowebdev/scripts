@@ -7,6 +7,13 @@ then
 
     echo $INICIO > $DATA;
 
+    LINHA=$SERVER;
+    LINHA=$LINHA";"$IP;
+    LINHA=$LINHA";"$USUARIOS;
+    LINHA=$LINHA";"$DISTRO;
+    LINHA=$LINHA";"$RELEASE;
+    echo $LINHA >> $DATA;
+
     LINHA=$MEMTOTAL;
     LINHA=$LINHA";"$MAXMEM2;
     LINHA=$LINHA";"$PICOMEM;

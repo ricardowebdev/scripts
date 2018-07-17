@@ -1,5 +1,6 @@
-Repositorio criado para armazenas scripts em shell utilizados para automatizar e auxiliar no desenvolvimento
+Monitor
 
-1 - monitor
-    Monitora o uso de memoria, processadores, uso do hd e pico dos valores
-    Alguns serviços  e já tem uma tela em html para visualização dessas informações
+Serviço que é uma combinação de diversas tecnologias que aprendi ao longo de 
+meus estudos que tem como resultado final o monitoramento de um servidor Linux
+monitorando seus principais recursos como HD, Memoria, Cpu, Informações sobre o server
+Com uma interface web de facil verificação.
