@@ -1,10 +1,12 @@
 <?php
+namespace Models;
 
 class Monitor
 {
     private $filePath;
     private $file;
-
+    private $status;
+    private $data;
 
     public function __construct()
     {
@@ -19,7 +21,8 @@ class Monitor
             $msg['data']   = 'arquivo inexistente ou inválido';
         }
 
-        $this->sendAnswer($msg);
+        $this->status = $msg['status'];
+        $this->data   = $msg['data'];
     }
 
     public function validateFile()
@@ -63,8 +66,13 @@ class Monitor
         return $data;
     }
 
-    public function sendAnswer($msg)
+    public function getData()
     {
-        echo json_encode($msg);
+        return $this->data;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

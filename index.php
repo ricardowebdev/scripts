@@ -61,8 +61,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="text-white">
-                                                        <td><?= $begin; ?></td>
-                                                        <td><?= $end;?></td>
+                                                        <td><?= $data['begin']; ?></td>
+                                                        <td><?= $data['end'];   ?></td>
                                                     </tr>                                
                                                 </tbody>
                                             </table>
@@ -82,8 +82,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $services[0]; ?></td>
-                                                    <td><?= $services[1]; ?></td>
+                                                    <td><?= $data['services'][0]; ?></td>
+                                                    <td><?= $data['services'][1]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -113,11 +113,11 @@
                                         </thead>
                                         <tbody>
                                             <tr class="text-white text-center">
-                                                <td><?= $server[0]; ?></td>
-                                                <td><?= $server[1]; ?></td>
-                                                <td><?= $server[3]; ?></td>
-                                                <td><?= $server[4]; ?></td>
-                                                <td><?= $server[2]; ?></td>
+                                                <td><?= $data['server'][0]; ?></td>
+                                                <td><?= $data['server'][1]; ?></td>
+                                                <td><?= $data['server'][3]; ?></td>
+                                                <td><?= $data['server'][4]; ?></td>
+                                                <td><?= $data['server'][2]; ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -144,9 +144,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $memory[0]; ?></td>
-                                                    <td><?= $memory[1]; ?> MB</td>
-                                                    <td><?= $memory[2]; ?></td>
+                                                    <td><?= $data['memory'][0]; ?></td>
+                                                    <td><?= $data['memory'][1]; ?> MB</td>
+                                                    <td><?= $data['memory'][2]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>
@@ -162,10 +162,10 @@
                                             </thead>
                                             <tbody>                          
                                                 <tr class="text-white">
-                                                    <td><?= $memory[3]; ?></td>
-                                                    <td><?= $memory[4]; ?>%</td>
-                                                    <td><?= $memory[5]; ?>%</td>
-                                                    <td><?= $memory[6]; ?></td>
+                                                    <td><?= $data['memory'][3]; ?></td>
+                                                    <td><?= $data['memory'][4]; ?>%</td>
+                                                    <td><?= $data['memory'][5]; ?>%</td>
+                                                    <td><?= $data['memory'][6]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -185,9 +185,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $swap[0]; ?></td>
-                                                    <td><?= $swap[1]; ?> MB</td>
-                                                    <td><?= $swap[2]; ?></td>
+                                                    <td><?= $data['swap'][0]; ?></td>
+                                                    <td><?= $data['swap'][1]; ?> MB</td>
+                                                    <td><?= $data['swap'][2]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>
@@ -203,10 +203,10 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $swap[3]; ?></td>
-                                                    <td><?= $swap[4]; ?>%</td>
-                                                    <td><?= $swap[5]; ?>%</td>
-                                                    <td><?= $swap[6]; ?></td>
+                                                    <td><?= $data['swap'][3]; ?></td>
+                                                    <td><?= $data['swap'][4]; ?>%</td>
+                                                    <td><?= $data['swap'][5]; ?>%</td>
+                                                    <td><?= $data['swap'][6]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -237,9 +237,9 @@
                                         </thead>
                                         <tbody>
                                             <tr class="text-white">
-                                                <td><?= $cpu[0]; ?></td>
-                                                <td><?= $cpu[1]; ?></td>
-                                                <td><?= $cpu[2]; ?></td>
+                                                <td><?= $data['cpu'][0]; ?></td>
+                                                <td><?= $data['cpu'][1]; ?></td>
+                                                <td><?= $data['cpu'][2]; ?></td>
                                             </tr>                                
                                         </tbody>
                                     </table>                                        
@@ -259,10 +259,10 @@
                                         </thead>
                                         <tbody>
                                             <tr class="text-white">
-                                                <td><?= $cpu[3]; ?></td>
-                                                <td><?= $cpu[4]; ?>%</td>
-                                                <td><?= $cpu[5]; ?>%</td>
-                                                <td><?= $cpu[6]; ?></td>
+                                                <td><?= $data['cpu'][3]; ?></td>
+                                                <td><?= $data['cpu'][4]; ?>%</td>
+                                                <td><?= $data['cpu'][5]; ?>%</td>
+                                                <td><?= $data['cpu'][6]; ?></td>
                                             </tr>                                
                                         </tbody>
                                     </table>                                    
@@ -288,9 +288,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $hd[0]; ?></td>
-                                                    <td><?= $hd[1]; ?></td>
-                                                    <td><?= $hd[2]; ?></td>
+                                                    <td><?= $data['hd'][0]; ?></td>
+                                                    <td><?= $data['hd'][1]; ?></td>
+                                                    <td><?= $data['hd'][2]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
