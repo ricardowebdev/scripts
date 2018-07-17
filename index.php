@@ -61,8 +61,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="text-white">
-                                                        <td><?= $inicio; ?></td>
-                                                        <td><?= $fim;?></td>
+                                                        <td><?= $begin; ?></td>
+                                                        <td><?= $end;?></td>
                                                     </tr>                                
                                                 </tbody>
                                             </table>
@@ -82,8 +82,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $servicos[0]; ?></td>
-                                                    <td><?= $servicos[1]; ?></td>
+                                                    <td><?= $services[0]; ?></td>
+                                                    <td><?= $services[1]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -144,9 +144,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $memoria[0]; ?></td>
-                                                    <td><?= $memoria[1]; ?> MB</td>
-                                                    <td><?= $memoria[2]; ?></td>
+                                                    <td><?= $memory[0]; ?></td>
+                                                    <td><?= $memory[1]; ?> MB</td>
+                                                    <td><?= $memory[2]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>
@@ -162,10 +162,10 @@
                                             </thead>
                                             <tbody>                          
                                                 <tr class="text-white">
-                                                    <td><?= $memoria[3]; ?></td>
-                                                    <td><?= $memoria[4]; ?>%</td>
-                                                    <td><?= $memoria[5]; ?>%</td>
-                                                    <td><?= $memoria[6]; ?></td>
+                                                    <td><?= $memory[3]; ?></td>
+                                                    <td><?= $memory[4]; ?>%</td>
+                                                    <td><?= $memory[5]; ?>%</td>
+                                                    <td><?= $memory[6]; ?></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
