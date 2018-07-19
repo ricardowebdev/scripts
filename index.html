@@ -1,5 +1,3 @@
-<?php require_once 'Service/service.php'; ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -61,8 +59,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="text-white">
-                                                        <td><?= $data['begin']; ?></td>
-                                                        <td><?= $data['end'];   ?></td>
+                                                        <td><span id="begin"></span></td>
+                                                        <td><span id="end"></span></td>
                                                     </tr>                                
                                                 </tbody>
                                             </table>
@@ -82,8 +80,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $data['services'][0]; ?></td>
-                                                    <td><?= $data['services'][1]; ?></td>
+                                                    <td><span id="apache"></span></td>
+                                                    <td><span id="mysql"></span></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -113,11 +111,11 @@
                                         </thead>
                                         <tbody>
                                             <tr class="text-white text-center">
-                                                <td><?= $data['server'][0]; ?></td>
-                                                <td><?= $data['server'][1]; ?></td>
-                                                <td><?= $data['server'][3]; ?></td>
-                                                <td><?= $data['server'][4]; ?></td>
-                                                <td><?= $data['server'][2]; ?></td>
+                                                <td><span id="server"></span> </td>
+                                                <td><span id="ip"></span>     </td>
+                                                <td><span id="release"></span></td>
+                                                <td><span id="distro"></span> </td>
+                                                <td><span id="users"></span>  </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -144,9 +142,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $data['memory'][0]; ?></td>
-                                                    <td><?= $data['memory'][1]; ?> MB</td>
-                                                    <td><?= $data['memory'][2]; ?></td>
+                                                    <td><span id="memDisponible"></span></td>
+                                                    <td><span id="memGreather"></span> MB</td>
+                                                    <td><span id="memTime"></span></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>
@@ -162,10 +160,10 @@
                                             </thead>
                                             <tbody>                          
                                                 <tr class="text-white">
-                                                    <td><?= $data['memory'][3]; ?></td>
-                                                    <td><?= $data['memory'][4]; ?>%</td>
-                                                    <td><?= $data['memory'][5]; ?>%</td>
-                                                    <td><?= $data['memory'][6]; ?></td>
+                                                    <td><span id="memUser"></span>      </td>
+                                                    <td><span id="memUsed"></span>     %</td>
+                                                    <td><span id="memProcessor"></span>%</td>
+                                                    <td><span id="memProcess"></span>   </td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -185,9 +183,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $data['swap'][0]; ?></td>
-                                                    <td><?= $data['swap'][1]; ?> MB</td>
-                                                    <td><?= $data['swap'][2]; ?></td>
+                                                    <td><span id="swapDisponible"></span> </td>
+                                                    <td><span id="swapGreather"></span> MB</td>
+                                                    <td><span id="swapTime"></span>       </td>
                                                 </tr>                                
                                             </tbody>
                                         </table>
@@ -203,10 +201,10 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $data['swap'][3]; ?></td>
-                                                    <td><?= $data['swap'][4]; ?>%</td>
-                                                    <td><?= $data['swap'][5]; ?>%</td>
-                                                    <td><?= $data['swap'][6]; ?></td>
+                                                    <td><span id="swapUser"></span>      </td>
+                                                    <td><span id="swapUsed"></span>     %</td>
+                                                    <td><span id="swapProcessor"></span>%</td>
+                                                    <td><span id="swapProcess"></span>   </td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -237,9 +235,9 @@
                                         </thead>
                                         <tbody>
                                             <tr class="text-white">
-                                                <td><?= $data['cpu'][0]; ?></td>
-                                                <td><?= $data['cpu'][1]; ?></td>
-                                                <td><?= $data['cpu'][2]; ?></td>
+                                                <td><span id="cpuDisponible"></span></td>
+                                                <td><span id="cpuGreather"></span>  </td>
+                                                <td><span id="cpuTime"></span>      </td>
                                             </tr>                                
                                         </tbody>
                                     </table>                                        
@@ -259,10 +257,10 @@
                                         </thead>
                                         <tbody>
                                             <tr class="text-white">
-                                                <td><?= $data['cpu'][3]; ?></td>
-                                                <td><?= $data['cpu'][4]; ?>%</td>
-                                                <td><?= $data['cpu'][5]; ?>%</td>
-                                                <td><?= $data['cpu'][6]; ?></td>
+                                                <td><span id="cpuUser"></span>      </td>
+                                                <td><span id="cpuUsed"></span>     %</td>
+                                                <td><span id="cpuProcessor"></span>%</td>
+                                                <td><span id="cpuProcess"></span>   </td>
                                             </tr>                                
                                         </tbody>
                                     </table>                                    
@@ -288,9 +286,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr class="text-white">
-                                                    <td><?= $data['hd'][0]; ?></td>
-                                                    <td><?= $data['hd'][1]; ?></td>
-                                                    <td><?= $data['hd'][2]; ?></td>
+                                                    <td><span id="hdSize"></span></td>
+                                                    <td><span id="hdUsed"></span></td>
+                                                    <td><span id="hdFree"></span></td>
                                                 </tr>                                
                                             </tbody>
                                         </table>                    
@@ -307,6 +305,7 @@
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
     <script>
         setTimeout(function() {window.location.reload()}, 60000);
     </script>
