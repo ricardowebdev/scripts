@@ -12,18 +12,11 @@ class Monitor
     {
         $date = !empty($_POST['date']) ? $_POST['date'] : date('d-m-Y');
         $this->filePath = "/opt/monitor/".$date.".json";
-        $data = $this->validateFile();
+        $this->data = $this->validateFile();
 
-        if ($data) {
-            $msg['status'] = 'success';
-            $msg['data']   = $data;
-        } else {
-            $msg['status'] = 'error';
-            $msg['data']   = 'arquivo inexistente ou inválido';
+        if ($this->data != "false") {
+            $this->analisys();
         }
-        
-        $this->status = $msg['status'];
-        $this->data   = $msg['data'];
     }
 
     public function validateFile()
@@ -41,8 +34,114 @@ class Monitor
         return $this->data;
     }
 
-    public function getStatus()
+    public function analisys()
     {
-        return $this->status;
+        $hd        = $this->analisysHd();
+        $memory    = $this->analisysMemory();
+        $services  = $this->analisysServices();
+        $processor = $this->analisysProcessor();
+        $swap      = $this->analisysSwap();
+
+        $analisys = array ("hd"        => $hd,
+                           "memory"    => $memory,
+                           "services"  => $services,
+                           "processor" => $processor,
+                           "swap"      => $swap);
+
+        $this->data->analisys = $analisys;
+    }
+
+    public function analisysHd()
+    {
+        $hd = $this->data->hd;
+        $percentual = $hd->used * 100;
+        $percentual = $percentual / $hd->total;
+
+        if ($percentual > 75) {
+            return "critical";
+        } else {
+            return "ok";
+        }
+    }
+
+    public function analisysMemory()
+    {
+        $this->data->memory->total = str_replace("G", "", $this->data->memory->total);
+        $this->data->memory->total = str_replace(",", ".", $this->data->memory->total);
+        $this->data->memory->total = $this->data->memory->total * 1000;
+
+        $memory = $this->data->memory;
+
+
+        $percentual = $memory->max * 100;
+        $percentual = $percentual / $memory->total;
+
+        if ($percentual > 80) {
+            return "critical";
+        } else {
+            return "ok";
+        }
+    }
+
+    public function analisysServices()
+    {
+        $situation = "ok";
+        $services  = $this->data->services;
+
+        foreach ($services as $service => $status) {
+            $status = str_replace('(', '', $status);
+            $status = str_replace(')', '', $status);
+            
+            $this->data->services->{$service} = $status;
+
+            if ($status != "running") {
+                $situation = "critical";
+            }
+        }
+
+        return $situation;
+    }
+
+    public function analisysProcessor()
+    {
+        //cores":"6.00","max":"1080","pico":"21:09:38","user":"ricardo","cpu":"26.2","mem":"5.2","proc":"\/opt\/google\/chrome\/chrome"
+        $cpu = $this->data->cpu;
+        $max = $cpu->max;
+
+        if (strlen($max) > 3) {
+            $max = substr($max, 0, strlen($max) -1);
+            $max = substr($max, 0, 1).".".substr($max, 1, strlen($max));
+        } else {
+            $max = "0.".$max;
+        }
+
+        $this->data->cpu->max = $max;
+
+        $percentual = $cpu->max * 100;
+        $percentual = $percentual / $cpu->cores;
+
+        if ($percentual > 80) {
+            return "critical";
+        } else {
+            return "ok";
+        }
+    }
+
+    public function analisysSwap()
+    {
+        $this->data->swap->total = str_replace("G", "", $this->data->swap->total);
+        $this->data->swap->total = str_replace(",", ".", $this->data->swap->total);
+        $this->data->swap->total = $this->data->swap->total * 1000;
+
+        $swap = $this->data->swap;
+
+        $percentual = $swap->max * 100;
+        $percentual = $percentual / $swap->total;
+
+        if ($percentual >= 50) {
+            return "critical";
+        } else {
+            return "ok";
+        }
     }
 }
