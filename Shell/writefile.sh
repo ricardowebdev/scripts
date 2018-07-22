@@ -2,50 +2,63 @@
 if [ $FILE -eq 1 ] 
 then
     FIM=$(date '+%Y/%m/%d %H:%M:%S');
-    DATA="/opt/monitor/"$(date -d 'today' '+%d-%m-%Y')".data";
+    DATA="/opt/monitor/"$(date -d 'today' '+%d-%m-%Y')".json";
     >> $DATA;
 
-    echo $INICIO > $DATA;
+    
+    echo '{' > $DATA; 
+    echo '"begin": "'$INICIO'",' >> $DATA;
+    
+    echo '"server": {' >> $DATA;
+    echo '"name": "'$SERVER'",'     >> $DATA;
+    echo '"ip": "'$IP'",'           >> $DATA;
+    echo '"users": "'$USUARIOS'",'  >> $DATA;
+    echo '"distr": "'$DISTRO'",'    >> $DATA;
+    echo '"release": "'$RELEASE'"' >> $DATA;
+    echo '},' >> $DATA;
 
-    LINHA=$SERVER;
-    LINHA=$LINHA";"$IP;
-    LINHA=$LINHA";"$USUARIOS;
-    LINHA=$LINHA";"$DISTRO;
-    LINHA=$LINHA";"$RELEASE;
-    echo $LINHA >> $DATA;
+    echo '"memory": {' >> $DATA;
+    echo '"total":"'$MEMTOTAL'",' >> $DATA;
+    echo '"max":"'$MAXMEM2'",'    >> $DATA;
+    echo '"pico":"'$PICOMEM'",'   >> $DATA;
+    echo '"user":"'$USERMEM'",'   >> $DATA;
+    echo '"cpu":"'$CPUMEM'",'     >> $DATA;
+    echo '"mem":"'$MEMMEM'",'     >> $DATA;
+    echo '"proc":"'$PROCMEM'"'   >> $DATA;    
+    echo '},' >> $DATA;
 
-    LINHA=$MEMTOTAL;
-    LINHA=$LINHA";"$MAXMEM2;
-    LINHA=$LINHA";"$PICOMEM;
-    LINHA=$LINHA";"$USERMEM;
-    LINHA=$LINHA";"$CPUMEM;
-    LINHA=$LINHA";"$MEMMEM;
-    LINHA=$LINHA";"$PROCMEM;
-    echo $LINHA >> $DATA;
+    echo '"swap": {' >> $DATA;
+    echo '"total":"'$SWAPTOTAL'",' >> $DATA;
+    echo '"max":"'$MAXSWAP2'",'    >> $DATA;
+    echo '"pico":"'$PICOSWAP'",'   >> $DATA;
+    echo '"user":"'$USERSWAP'",'   >> $DATA;
+    echo '"cpu":"'$CPUSWAP'",'     >> $DATA;
+    echo '"mem":"'$MEMSWAP'",'     >> $DATA;
+    echo '"proc":"'$PROCSWAP'"'   >> $DATA;      
+    echo '},' >> $DATA;
 
-    LINHA=$SWAPTOTAL;
-    LINHA=$LINHA";"$MAXSWAP2;
-    LINHA=$LINHA";"$PICOSWAP;
-    LINHA=$LINHA";"$USERSWAP;
-    LINHA=$LINHA";"$CPUSWAP;
-    LINHA=$LINHA";"$MEMSWAP;
-    LINHA=$LINHA";"$PROCSWAP;
-    echo $LINHA >> $DATA;
+    echo '"cpu": {' >> $DATA;
+    echo '"cores":"'$CORES'",'  >> $DATA;
+    echo '"max":"'$MAXCPU'",'   >> $DATA;
+    echo '"pico":"'$PICOCPU'",' >> $DATA;
+    echo '"user":"'$USERCPU'",' >> $DATA;
+    echo '"cpu":"'$CPUCPU'",'   >> $DATA;
+    echo '"mem":"'$MEMCPU'",'   >> $DATA;
+    echo '"proc":"'$PROCCPU'"' >> $DATA;      
+    echo '},' >> $DATA;    
 
-    LINHA=$CORES;
-    LINHA=$LINHA";"$MAXCPU;
-    LINHA=$LINHA";"$PICOCPU;
-    LINHA=$LINHA";"$USERCPU;
-    LINHA=$LINHA";"$CPUCPU;
-    LINHA=$LINHA";"$MEMCPU;
-    LINHA=$LINHA";"$PROCCPU;        
-    echo $LINHA >> $DATA;
+    echo '"services": {' >> $DATA;
+    echo '"apache": "'$STAPACHE'",' >> $DATA;
+    echo '"mysql": "'$STMYSQL'"'   >> $DATA;
+    echo '},' >> $DATA;    
 
-    LINHA=$STAPACHE";"$STMYSQL;
-    echo $LINHA >> $DATA;
+    echo '"hd": {' >> $DATA;
+    echo '"total": "'$HDTOTAL'",' >> $DATA;
+    echo '"used": "'$HDUSED'",'   >> $DATA;
+    echo '"free": "'$HDFREE'"'   >> $DATA;
+    echo '},' >> $DATA;   
 
-    LINHA=$HDTOTAL";"$HDUSED";"$HDFREE;
-    echo $LINHA >> $DATA;
+    echo '"end": "'$FIM'"' >> $DATA;
 
-    echo $FIM >> $DATA;        
+    echo '}' >> $DATA;     
 fi

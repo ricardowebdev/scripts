@@ -28,4 +28,6 @@ SERVER=$(hostname);
 IP=$(ip a | grep inet | head -1);
 USUARIOS=$(users);
 DISTRO=$(cat /etc/*-release | grep DISTRIB_DESCRIPTION);
+DISTRO=${DISTRO/\"/\'};
+DISTRO=${DISTRO/\"/\'};
 RELEASE=$(cat /etc/*-release | grep DISTRIB_RELEASE);

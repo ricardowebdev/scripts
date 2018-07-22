@@ -9,42 +9,42 @@ $(document).ready(function(){
     		$('#begin').html(data.begin);
     		$('#end').html(data.end);
 
-    		$('#apache').html(data.services[0]);
-    		$('#mysql').html(data.services[1]);
+    		$('#apache').html(data.services.apache);
+    		$('#mysql').html(data.services.mysql);
 
-    		$('#server').html(data.server[0]);
-    		$('#ip').html(data.server[1]);
-    		$('#release').html(data.server[3]);
-    		$('#distro').html(data.server[4]);
-    		$('#users').html(data.server[2]);    		
-	        
-	        $('#memDisponible').html(data.memory[0]);
-	        $('#memGreather').html(data.memory[1]);
-	        $('#memTime').html(data.memory[2]);
-	        $('#memUser').html(data.memory[3]);
-	        $('#memUsed').html(data.memory[4]);
-	        $('#memProcessor').html(data.memory[5]);
-	        $('#memProcess').html(data.memory[6]);
-			
-	        $('#swapDisponible').html(data.swap[0]);
-	        $('#swapGreather').html(data.swap[1]);
-	        $('#swapTime').html(data.swap[2]);
-	        $('#swapUser').html(data.swap[3]);
-	        $('#swapUsed').html(data.swap[4]);
-	        $('#swapProcessor').html(data.swap[5]);
-	        $('#swapProcess').html(data.swap[6]);
-			
-	        $('#cpuDisponible').html(data.cpu[0]);
-	        $('#cpuGreather').html(data.cpu[1]);
-	        $('#cpuTime').html(data.cpu[2]);
-	        $('#cpuUser').html(data.cpu[3]);
-	        $('#cpuUsed').html(data.cpu[4]);
-	        $('#cpuProcessor').html(data.cpu[5]);
-	        $('#cpuProcess').html(data.cpu[6]);
+    		$('#server').html(data.server.name);
+    		$('#ip').html(data.server.ip);
+    		$('#release').html(data.server.release);
+    		$('#distro').html(data.server.distr);
+    		$('#users').html(data.server.users);    		
 
-	        $('#hdSize').html(data.hd[0]);
-	        $('#hdUsed').html(data.hd[1]);
-	        $('#hdFree').html(data.hd[2]);            	   	       
+	        $('#memDisponible').html(data.memory.total);
+	        $('#memGreather').html(data.memory.max);
+	        $('#memTime').html(data.memory.pico);
+	        $('#memUser').html(data.memory.user);
+	        $('#memUsed').html(data.memory.mem);
+	        $('#memProcessor').html(data.memory.cpu);
+	        $('#memProcess').html(data.memory.proc);
+			
+	        $('#swapDisponible').html(data.swap.total);
+	        $('#swapGreather').html(data.swap.max);
+	        $('#swapTime').html(data.swap.pico);
+	        $('#swapUser').html(data.swap.user);
+	        $('#swapUsed').html(data.swap.mem);
+	        $('#swapProcessor').html(data.swap.cpu);
+	        $('#swapProcess').html(data.swap.proc);
+			
+	        $('#cpuDisponible').html(data.cpu.cores);
+	        $('#cpuGreather').html(data.cpu.max);
+	        $('#cpuTime').html(data.cpu.pico);
+	        $('#cpuUser').html(data.cpu.user);
+	        $('#cpuUsed').html(data.cpu.mem);
+	        $('#cpuProcessor').html(data.cpu.cpu);
+	        $('#cpuProcess').html(data.cpu.proc);
+
+	        $('#hdSize').html(data.hd.total);
+	        $('#hdUsed').html(data.hd.used);
+	        $('#hdFree').html(data.hd.free);            	   	       
     	} else {
     		alert("Não há dados monitorados no periodo");
     	}    
