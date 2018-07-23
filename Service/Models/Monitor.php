@@ -42,13 +42,13 @@ class Monitor
         $processor = $this->analisysProcessor();
         $swap      = $this->analisysSwap();
 
-        $analisys = array ("hd"        => $hd,
-                           "memory"    => $memory,
-                           "services"  => $services,
-                           "processor" => $processor,
-                           "swap"      => $swap);
+        $alerts = array ("hd"        => $hd,
+                         "memory"    => $memory,
+                         "services"  => $services,
+                         "processor" => $processor,
+                         "swap"      => $swap);
 
-        $this->data->analisys = $analisys;
+        $this->data->alerts = $alerts;
     }
 
     public function analisysHd()
@@ -57,11 +57,7 @@ class Monitor
         $percentual = $hd->used * 100;
         $percentual = $percentual / $hd->total;
 
-        if ($percentual > 75) {
-            return "critical";
-        } else {
-            return "ok";
-        }
+        return $percentual > 75 ? true : false;
     }
 
     public function analisysMemory()
@@ -76,16 +72,12 @@ class Monitor
         $percentual = $memory->max * 100;
         $percentual = $percentual / $memory->total;
 
-        if ($percentual > 80) {
-            return "critical";
-        } else {
-            return "ok";
-        }
+        return $percentual > 80 ? true : false;
     }
 
     public function analisysServices()
     {
-        $situation = "ok";
+        $situation = false;
         $services  = $this->data->services;
 
         foreach ($services as $service => $status) {
@@ -95,7 +87,7 @@ class Monitor
             $this->data->services->{$service} = $status;
 
             if ($status != "running") {
-                $situation = "critical";
+                $situation = true;
             }
         }
 
@@ -120,11 +112,7 @@ class Monitor
         $percentual = $cpu->max * 100;
         $percentual = $percentual / $cpu->cores;
 
-        if ($percentual > 80) {
-            return "critical";
-        } else {
-            return "ok";
-        }
+        return $percentual > 80 ? true : false;
     }
 
     public function analisysSwap()
@@ -138,10 +126,6 @@ class Monitor
         $percentual = $swap->max * 100;
         $percentual = $percentual / $swap->total;
 
-        if ($percentual >= 50) {
-            return "critical";
-        } else {
-            return "ok";
-        }
+        return $percentual >= 50 ? true : false;
     }
 }

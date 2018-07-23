@@ -22,21 +22,41 @@
             <div class="col-md-11" style="margin-left: 50px;"> 
                 
                 <div class="classic-tabs">
-                    <ul class="nav success-color-dark" role="tablist">
+                    <ul class="nav warning-color-dark" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link waves-light active black-text" data-toggle="tab" href="#confServer" role="tab">Confs do server</a>
+                            <a class="nav-link waves-light active white-text" data-toggle="tab" href="#confServer" role="tab">
+                                <span class="badge badge-pill green" id="confBadge">
+                                    <i class="fa fa-wrench fa-2x" aria-hidden="true" id="confIcon"></i>
+                                    <b>Confs do server</b>
+                                </span>                                
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link waves-light black-text" data-toggle="tab" href="#memoria" role="tab">Memoria</a>
+                            <a class="nav-link waves-light white-text" data-toggle="tab" href="#memoria" role="tab">
+                                <span class="badge badge-pill green" id="memBadge">
+                                    <i class="fa fa-cubes fa-2x" aria-hidden="true" id="memIcon"></i>
+                                    <b>Memoria</b>
+                                </span>
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link waves-light black-text" data-toggle="tab" href="#cpu" role="tab">CPU</a>
+                            <a class="nav-link waves-light white-text" data-toggle="tab" href="#cpu" role="tab">
+                                <span class="badge badge-pill green" id="cpuBadge">
+                                    <i class="fa fa-microchip fa-2x" aria-hidden="true" id="cpuIcon"></i>
+                                    <b>CPU</b>
+                                </span>                                
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link waves-light black-text" data-toggle="tab" href="#hd" role="tab">HardDisk</a>
+                            <a class="nav-link waves-light white-text" data-toggle="tab" href="#hd" role="tab">
+                                <span class="badge badge-pill green" id="hdBadge">
+                                    <i class="fa fa-hdd-o fa-2x" aria-hidden="true" id="hdIcon"></i>
+                                    <b>HardDisk</b>
+                                </span>                                
+                            </a>
                         </li>
                     </ul>
 
@@ -51,7 +71,7 @@
                                         <h1 class="text-white">Periodo Monitorado</h1>
                                         <div class="col-md-12">
                                             <table class="table table-hover table-striped table-bordered text-white">
-                                                <thead class="success-color-dark text-white">
+                                                <thead class="warning-color-dark text-white">
                                                     <tr class="text-white">
                                                         <th>Inicio</th>
                                                         <th>Fim</th>
@@ -72,7 +92,7 @@
                                     <div class="col-md-12 text-center">
                                         <h1 class="text-white">Serviços Monitorados</h1>
                                         <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="success-color-dark text-white">
+                                            <thead class="warning-color-dark text-white">
                                                 <tr>
                                                     <th>Apache</th>
                                                     <th>Mysql</th>
@@ -100,7 +120,7 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-10">
                                     <table class="table table-hover table-striped table-bordered text-center">
-                                        <thead class="text-white success-color-dark">
+                                        <thead class="text-white warning-color-dark">
                                             <tr class="text-white text-center">
                                                 <th>Server</th>
                                                 <th>Ip</th>
@@ -133,7 +153,7 @@
                                     <div class="col-md-12 text-center">
                                         <h1 class="text-white">Memoria Ram</h1>
                                         <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="success-color-dark text-white">
+                                            <thead class="warning-color-dark text-white">
                                                 <tr>
                                                     <th>Disponivel</th>
                                                     <th>Maior Uso</th>
@@ -150,7 +170,7 @@
                                         </table>
 
                                         <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="success-color-dark text-white">
+                                            <thead class="warning-color-dark text-white">
                                                 <tr>
                                                     <th>Usuario</th>
                                                     <th>Uso Memoria</th>
@@ -174,7 +194,7 @@
                                     <div class="col-md-12 text-center">
                                         <h1 class="text-white">SWAP</h1>
                                         <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="success-color-dark text-white">
+                                            <thead class="warning-color-dark text-white">
                                                 <tr>
                                                     <th>Disponivel</th>
                                                     <th>Maior Uso</th>
@@ -191,7 +211,7 @@
                                         </table>
 
                                         <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="success-color-dark text-white">
+                                            <thead class="warning-color-dark text-white">
                                                 <tr>
                                                     <th>Usuario</th>
                                                     <th>Uso Memoria</th>
@@ -226,7 +246,7 @@
                             <div class="row">
                                 <div class="col-md-4 center" style="margin-left: 45px;">
                                     <table class="table table-hover table-striped table-bordered text-white">
-                                        <thead class="success-color-dark text-white">
+                                        <thead class="warning-color-dark text-white">
                                             <tr>
                                                 <th>Disponivel</th>
                                                 <th>Maior Uso</th>
@@ -247,7 +267,7 @@
 
                                 <div class="col-md-6">
                                     <table class="table table-hover table-striped table-bordered text-white">
-                                        <thead class="success-color-dark text-white">
+                                        <thead class="warning-color-dark text-white">
                                             <tr>
                                                 <th>Usuario</th>
                                                 <th>Uso Memoria</th>
@@ -277,7 +297,7 @@
                                         <h1 class="text-white">HD</h1>
 
                                         <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="success-color-dark text-white">
+                                            <thead class="warning-color-dark text-white">
                                                 <tr>
                                                     <th>Tamanho</th>
                                                     <th>Usado</th>
@@ -306,8 +326,5 @@
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/mdb.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
-    <script>
-        setTimeout(function() {window.location.reload()}, 60000);
-    </script>
 </body>
 </html>
