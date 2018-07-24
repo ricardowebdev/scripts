@@ -68,43 +68,29 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5">
                                     <div class="col-md-12 text-center">
-                                        <h1 class="text-white">Periodo Monitorado</h1>
-                                        <div class="col-md-12">
-                                            <table class="table table-hover table-striped table-bordered text-white">
-                                                <thead class="warning-color-dark text-white">
-                                                    <tr class="text-white">
-                                                        <th>Inicio</th>
-                                                        <th>Fim</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="text-white">
-                                                        <td><span id="begin"></span></td>
-                                                        <td><span id="end"></span></td>
-                                                    </tr>                                
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        <div class="card">
+                                            <div class="card-header warning-color-dark white-text">Periodo Monitorado</div>
+                                            <div class="card-body">
+                                                <p class="card-text">
+                                                    <b>Inicio: </b><span id="begin"></span><br>
+                                                    <b>Fim: </b><span id="end"></span><br>
+                                                </p>
+                                            </div>
+                                        </div>                                        
                                     </div>
                                 </div>
 
                                 <div class="col-md-5">                
                                     <div class="col-md-12 text-center">
-                                        <h1 class="text-white">Serviços Monitorados</h1>
-                                        <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="warning-color-dark text-white">
-                                                <tr>
-                                                    <th>Apache</th>
-                                                    <th>Mysql</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="text-white">
-                                                    <td><span id="apache"></span></td>
-                                                    <td><span id="mysql"></span></td>
-                                                </tr>                                
-                                            </tbody>
-                                        </table>                    
+                                        <div class="card">
+                                            <div class="card-header warning-color-dark white-text">Serviços Monitorados</div>
+                                            <div class="card-body">
+                                                <p class="card-text">
+                                                    <b>Apache: </b><span id="apache"></span><br>
+                                                    <b>Mysql: </b><span id="mysql"></span><br>
+                                                </p>
+                                            </div>
+                                        </div>                                                            
                                     </div>    
                                 </div>
 
@@ -291,30 +277,34 @@
                         <div class="tab-pane fade" id="hd" role="tabpanel">
                             <br>
                             <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5 center">
-                                    <div class="col-md-12 text-center">                
-                                        <h1 class="text-white">HD</h1>
-
-                                        <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="warning-color-dark text-white">
-                                                <tr>
-                                                    <th>Tamanho</th>
-                                                    <th>Usado</th>
-                                                    <th>Livre</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="text-white">
-                                                    <td><span id="hdSize"></span></td>
-                                                    <td><span id="hdUsed"></span></td>
-                                                    <td><span id="hdFree"></span></td>
-                                                </tr>                                
-                                            </tbody>
-                                        </table>                    
-                                    </div>                
+                                <div class="col-12 text-center">
+                                    <h1 class="text-white text-center">HD</h1>                                    
                                 </div>
-                            </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-md-5 center" style="margin-top: 30px">
+                                    <table class="table table-hover table-striped table-bordered text-white text-center">
+                                        <thead class="warning-color-dark text-white">
+                                            <tr>
+                                                <th>Tamanho</th>
+                                                <th>Usado</th>
+                                                <th>Livre</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-white">
+                                                <td><span id="hdSize"></span></td>
+                                                <td><span id="hdUsed"></span></td>
+                                                <td><span id="hdFree"></span></td>
+                                            </tr>                                
+                                        </tbody>
+                                    </table>                    
+                                </div>
+                                <div class="col-6 text-center">
+                                    <canvas id="hdChart" style="height: 200px;"></canvas>
+                                </div>                                                                                                
+                            </div><br>
                         </div>
                     </div>
                 </div>                
@@ -324,7 +314,8 @@
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+    <script type="text/javascript" src="assets/js/mdb.min.js"></script>    
+    <script type="text/javascript" src="assets/js/Chart.bundle.min.js"></script>    
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

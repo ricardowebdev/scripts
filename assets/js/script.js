@@ -13,7 +13,13 @@ function handleAlerts(alerts)
 	memAlert  = (alerts.memory) || (alerts.swap) ? true : false;
 	hdAlert   = alerts.hd;
 	cpuAlert  = alerts.processor;
-	infoAlert = alerts.services;
+
+	for(x in alerts.services) {
+		if (alerts.services[x].situation == true) {
+			infoAlert = true;
+		}
+	}
+	
 }
 
 function feedFields(data)
@@ -56,14 +62,15 @@ function feedFields(data)
 
     $('#hdSize').html(data.hd.total);
     $('#hdUsed').html(data.hd.used);
-    $('#hdFree').html(data.hd.free); 	
+    $('#hdFree').html(data.hd.free); 
+    hdChart(data.hd);
 }
 
 function getServiceInfo()
 {
     $.ajax({
         type : "GET",    
-        url  : 'http://localhost:9090/Service/', 
+        url  : 'http://localhost/monitor/Service/', 
         dataType: 'json',        	        
     }).done(function(data) {
     	console.log(data);
@@ -138,3 +145,29 @@ window.setInterval(function(){
 		getServiceInfo();
 	}  
 }, 2000);
+
+
+function hdChart(hd)
+{
+	var ctx = document.getElementById("hdChart");
+
+	var hdChart = new Chart(ctx, {
+	    type: 'pie',
+		data: {
+			labels: ['used', 'free'],
+    		datasets: [{
+        		data: [hd.used, 
+	            	   hd.free],		    	
+	            backgroundColor: [
+					'rgba(153, 102, 255, 0.2)',
+                	'rgba(255, 159, 64, 0.2)'
+	            ],
+	            borderColor: [
+	                'rgba(153, 102, 255, 1)',
+	                'rgba(255, 159, 64, 1)'
+	            ],	            
+	            label: 'Usado X Livre'
+    		}],            
+		}		    
+	});
+}

@@ -53,7 +53,12 @@ class Monitor
 
     public function analisysHd()
     {
+        $this->data->hd->used  = str_replace('G', '', $this->data->hd->used);
+        $this->data->hd->free  = str_replace('G', '', $this->data->hd->free);
+        $this->data->hd->total = str_replace('G', '', $this->data->hd->total);
+
         $hd = $this->data->hd;
+
         $percentual = $hd->used * 100;
         $percentual = $percentual / $hd->total;
 
@@ -77,8 +82,8 @@ class Monitor
 
     public function analisysServices()
     {
-        $situation = false;
-        $services  = $this->data->services;
+        $data     = [];
+        $services = $this->data->services;
 
         foreach ($services as $service => $status) {
             $status = str_replace('(', '', $status);
@@ -88,10 +93,17 @@ class Monitor
 
             if ($status != "running") {
                 $situation = true;
+                $message   = "$service is not running";
+            } else {
+                $situation = false;
+                $message   = "$service is OK";
             }
+
+            $data[] = array("situation" => $situation,
+                            "message"   => $message);
         }
 
-        return $situation;
+        return $data;
     }
 
     public function analisysProcessor()
