@@ -31,3 +31,4 @@ DISTRO=$(cat /etc/*-release | grep DISTRIB_DESCRIPTION);
 DISTRO=${DISTRO/\"/\'};
 DISTRO=${DISTRO/\"/\'};
 RELEASE=$(cat /etc/*-release | grep DISTRIB_RELEASE);
+CONEXAO=$(ping -c 1 google.com &> /dev/null && echo -e 'Connected' || echo -e 'Disconnected');

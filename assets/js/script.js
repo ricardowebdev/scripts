@@ -3,6 +3,12 @@ var memAlert  = false;
 var cpuAlert  = false;
 var infoAlert = false;
 var count     = 0;
+var memory    = {};
+var hd        = {};
+var processor = {};
+var swap      = {};
+var services  = {};
+
 
 $(document).ready(function(){
 	getServiceInfo();
@@ -10,6 +16,8 @@ $(document).ready(function(){
 
 function handleAlerts(alerts)
 {
+	console.log(alerts);
+
 	memAlert  = (alerts.memory) || (alerts.swap) ? true : false;
 	hdAlert   = alerts.hd;
 	cpuAlert  = alerts.processor;
@@ -24,53 +32,60 @@ function handleAlerts(alerts)
 
 function feedFields(data)
 {
+	services = data.services;
+	cpu      = data.cpu;
+	hd       = data.hd;
+	memory   = data.memory;
+	swap     = data.swap;
+	server   = data.server;
+
 	$('#begin').html(data.begin);
 	$('#end').html(data.end);
 
-	$('#apache').html(data.services.apache);
-	$('#mysql').html(data.services.mysql);
+	$('#apache').html(services.apache);
+	$('#mysql').html(services.mysql);
 
-	$('#server').html(data.server.name);
-	$('#ip').html(data.server.ip);
-	$('#release').html(data.server.release);
-	$('#distro').html(data.server.distr);
-	$('#users').html(data.server.users);    		
+	$('#server').html(server.name);
+	$('#ip').html(server.ip);
+	$('#release').html(server.release);
+	$('#distro').html(server.distr);
+	$('#users').html(server.users);    		
 
-    $('#memDisponible').html(data.memory.total);
-    $('#memGreather').html(data.memory.max);
-    $('#memTime').html(data.memory.pico);
-    $('#memUser').html(data.memory.user);
-    $('#memUsed').html(data.memory.mem);
-    $('#memProcessor').html(data.memory.cpu);
-    $('#memProcess').html(data.memory.proc);
+    $('#memDisponible').html(memory.total);
+    $('#memGreather').html(memory.max);
+    $('#memTime').html(memory.pico);
+    $('#memUser').html(memory.user);
+    $('#memUsed').html(memory.mem);
+    $('#memProcessor').html(memory.cpu);
+    $('#memProcess').html(memory.proc);
 	
-    $('#swapDisponible').html(data.swap.total);
-    $('#swapGreather').html(data.swap.max);
-    $('#swapTime').html(data.swap.pico);
-    $('#swapUser').html(data.swap.user);
-    $('#swapUsed').html(data.swap.mem);
-    $('#swapProcessor').html(data.swap.cpu);
-    $('#swapProcess').html(data.swap.proc);
+    $('#swapDisponible').html(swap.total);
+    $('#swapGreather').html(swap.max);
+    $('#swapTime').html(swap.pico);
+    $('#swapUser').html(swap.user);
+    $('#swapUsed').html(swap.mem);
+    $('#swapProcessor').html(swap.cpu);
+    $('#swapProcess').html(swap.proc);
 	
-    $('#cpuDisponible').html(data.cpu.cores);
-    $('#cpuGreather').html(data.cpu.max);
-    $('#cpuTime').html(data.cpu.pico);
-    $('#cpuUser').html(data.cpu.user);
-    $('#cpuUsed').html(data.cpu.mem);
-    $('#cpuProcessor').html(data.cpu.cpu);
-    $('#cpuProcess').html(data.cpu.proc);
+    $('#cpuDisponible').html(cpu.cores);
+    $('#cpuGreather').html(cpu.max);
+    $('#cpuTime').html(cpu.pico);
+    $('#cpuUser').html(cpu.user);
+    $('#cpuUsed').html(cpu.mem);
+    $('#cpuProcessor').html(cpu.cpu);
+    $('#cpuProcess').html(cpu.proc);
 
-    $('#hdSize').html(data.hd.total);
-    $('#hdUsed').html(data.hd.used);
-    $('#hdFree').html(data.hd.free); 
-    hdChart(data.hd);
+    $('#hdSize').html(hd.total);
+    $('#hdUsed').html(hd.used);
+    $('#hdFree').html(hd.free); 
+    hdChart(hd);
 }
 
 function getServiceInfo()
 {
     $.ajax({
         type : "GET",    
-        url  : 'http://localhost/monitor/Service/', 
+        url  : 'http://localhost:9090/Service/', 
         dataType: 'json',        	        
     }).done(function(data) {
     	console.log(data);

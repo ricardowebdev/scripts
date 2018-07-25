@@ -66,68 +66,50 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-1"></div>
-                                <div class="col-md-5">
-                                    <div class="col-md-12 text-center">
-                                        <div class="card">
-                                            <div class="card-header warning-color-dark white-text">Periodo Monitorado</div>
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                    <b>Inicio: </b><span id="begin"></span><br>
-                                                    <b>Fim: </b><span id="end"></span><br>
-                                                </p>
-                                            </div>
-                                        </div>                                        
-                                    </div>
+                                <div class="col-md-5 text-center">
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">Periodo Monitorado</div>
+                                        <div class="card-body">
+                                            <b>Inicio: </b><span id="begin"></span><br>
+                                            <b>Fim: </b><span id="end"></span><br>
+                                        </div>
+                                    </div>                                        
                                 </div>
 
-                                <div class="col-md-5">                
-                                    <div class="col-md-12 text-center">
-                                        <div class="card">
-                                            <div class="card-header warning-color-dark white-text">Serviços Monitorados</div>
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                    <b>Apache: </b><span id="apache"></span><br>
-                                                    <b>Mysql: </b><span id="mysql"></span><br>
-                                                </p>
-                                            </div>
-                                        </div>                                                            
-                                    </div>    
+                                <div class="col-md-5 text-center">                
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">Serviços Monitorados</div>
+                                        <div class="card-body">
+                                            <b>Apache: </b><span id="apache"></span><br>
+                                            <b>Mysql: </b><span id="mysql"></span><br>
+                                        </div>
+                                    </div>                                                            
                                 </div>
 
                                 <div class="col-md-1"></div>            
                             </div><br>
 
                             <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <h1 class="text-white text-center">Informações do Server</h1>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-10">
-                                    <table class="table table-hover table-striped table-bordered text-center">
-                                        <thead class="text-white warning-color-dark">
-                                            <tr class="text-white text-center">
-                                                <th>Server</th>
-                                                <th>Ip</th>
-                                                <th>Release</th>
-                                                <th>Distro</th>
-                                                <th>Users</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-white text-center">
-                                                <td><span id="server"></span> </td>
-                                                <td><span id="ip"></span>     </td>
-                                                <td><span id="release"></span></td>
-                                                <td><span id="distro"></span> </td>
-                                                <td><span id="users"></span>  </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-md-1"></div>
-                            </div>
+                                <div class="col-1"></div>
+                                <div class="col-md-10 text-center">                
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">Informações do Server</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-5 text-center">
+                                                    <b>Server:  </b><span id="server"></span><br>
+                                                    <b>Ip:      </b><span id="ip"></span><br>
+                                                    <b>Release: </b><span id="release"></span><br>                                                
+                                                </div>
+                                                <div class="col-5 text-center">
+                                                    <b>Distro:  </b><span id="distro"></span><br>
+                                                    <b>Users:   </b><span id="users"></span><br>                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                                            
+                                </div>                                
+                            </div><br>
                         </div>
 
                         <div class="tab-pane fade" id="memoria" role="tabpanel">
@@ -136,87 +118,131 @@
                                 <div class="col-md-1"></div>
                             
                                 <div class="col-md-5 center">
-                                    <div class="col-md-12 text-center">
-                                        <h1 class="text-white">Memoria Ram</h1>
-                                        <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="warning-color-dark text-white">
-                                                <tr>
-                                                    <th>Disponivel</th>
-                                                    <th>Maior Uso</th>
-                                                    <th>Horario Pico</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="text-white">
-                                                    <td><span id="memDisponible"></span> MB</td>
-                                                    <td><span id="memGreather"></span> MB</td>
-                                                    <td><span id="memTime"></span></td>
-                                                </tr>                                
-                                            </tbody>
-                                        </table>
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">Memoria Ram</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Disponivel: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memDisponible"></span>
+                                                </div>
 
-                                        <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="warning-color-dark text-white">
-                                                <tr>
-                                                    <th>Usuario</th>
-                                                    <th>Uso Memoria</th>
-                                                    <th>Uso Processador</th>
-                                                    <th>Processo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>                          
-                                                <tr class="text-white">
-                                                    <td><span id="memUser"></span>      </td>
-                                                    <td><span id="memUsed"></span>     %</td>
-                                                    <td><span id="memProcessor"></span>%</td>
-                                                    <td><span id="memProcess"></span>   </td>
-                                                </tr>                                
-                                            </tbody>
-                                        </table>                    
-                                    </div>                
+                                                <div class="col-3 text-center">
+                                                    <b>Maior Uso: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memGreather"></span>
+                                                </div>                                                                                               
+                                            </div><br>
+
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Horario Pico: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memTime"></span>
+                                                </div>                                                
+                                            </div><hr>
+
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Usuario: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memUser"></span>
+                                                </div> 
+                                                <div class="col-3 text-center">
+                                                    <b>Uso Memoria: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memUsed"></span>%
+                                                </div>                                                                                                
+                                            </div><br>
+
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Uso Processador: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memProcessor"></span>%
+                                                </div>
+
+                                                <div class="col-3 text-center">
+                                                    <b>Processo: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="memProcess"></span>%
+                                                </div>                                                                                                  
+                                            </div>                                                                                                                      
+                                        </div>
+                                    </div>              
                                 </div>
 
                                 <div class="col-md-5 center">
-                                    <div class="col-md-12 text-center">
-                                        <h1 class="text-white">SWAP</h1>
-                                        <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="warning-color-dark text-white">
-                                                <tr>
-                                                    <th>Disponivel</th>
-                                                    <th>Maior Uso</th>
-                                                    <th>Horario Pico</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="text-white">
-                                                    <td><span id="swapDisponible"></span> MB</td>
-                                                    <td><span id="swapGreather"></span> MB</td>
-                                                    <td><span id="swapTime"></span>       </td>
-                                                </tr>                                
-                                            </tbody>
-                                        </table>
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">SWAP</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Disponivel: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapDisponible"></span>
+                                                </div>
 
-                                        <table class="table table-hover table-striped table-bordered text-white">
-                                            <thead class="warning-color-dark text-white">
-                                                <tr>
-                                                    <th>Usuario</th>
-                                                    <th>Uso Memoria</th>
-                                                    <th>Uso Processador</th>
-                                                    <th>Processo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="text-white">
-                                                    <td><span id="swapUser"></span>      </td>
-                                                    <td><span id="swapUsed"></span>     %</td>
-                                                    <td><span id="swapProcessor"></span>%</td>
-                                                    <td><span id="swapProcess"></span>   </td>
-                                                </tr>                                
-                                            </tbody>
-                                        </table>                    
+                                                <div class="col-3 text-center">
+                                                    <b>Maior Uso: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapGreather"></span>
+                                                </div>                                                                                               
+                                            </div><br>
 
-                                    </div>
-                                </div>
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Horario Pico: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapTime"></span>
+                                                </div>                                                
+                                            </div><hr>
+
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Usuario: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapUser"></span>
+                                                </div> 
+                                                <div class="col-3 text-center">
+                                                    <b>Uso Memoria: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapUsed"></span>%
+                                                </div>                                                                                                
+                                            </div><br>                              
+
+                                            <div class="row">
+                                                <div class="col-3 text-center">
+                                                    <b>Uso Processador: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapProcessor"></span>%
+                                                </div>
+
+                                                <div class="col-3 text-center">
+                                                    <b>Processo: </b>                                                
+                                                </div>
+                                                <div class="col-3">
+                                                    <span id="swapProcess"></span>%
+                                                </div>                                                                                                  
+                                            </div>                                                                                                                      
+                                        </div>
+                                    </div>              
+                                </div>                                
+
 
                                 <div class="col-md-1"></div>
                             </div><br>                            

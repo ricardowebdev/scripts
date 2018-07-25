@@ -8,6 +8,7 @@ then
     
     echo '{' > $DATA; 
     echo '"begin": "'$INICIO'",' >> $DATA;
+    echo '"connection":"'$CONEXAO'",' >> $DATA;
     
     echo '"server": {' >> $DATA;
     echo '"name": "'$SERVER'",'     >> $DATA;
