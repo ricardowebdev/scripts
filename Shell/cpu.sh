@@ -12,7 +12,7 @@ then
     FILE=1;
     MAXCPU=$TEMP;        
     PICOCPU=$(date -d 'today' '+%H:%I:%S');
-    PROCCPU=$(ps aux | sort -nk 4 | tail -1);
+    PROCCPU=$(ps aux | sort -nk 3 | tail -1);
     USERCPU=$(echo $PROCCPU | awk '{print $1}');
     CPUCPU=$(echo $PROCCPU | awk '{print $3}');
     MEMCPU=$(echo $PROCCPU | awk '{print $4}');

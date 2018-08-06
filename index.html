@@ -243,7 +243,6 @@
                                     </div>              
                                 </div>                                
 
-
                                 <div class="col-md-1"></div>
                             </div><br>                            
                         </div>
@@ -251,86 +250,48 @@
                         <div class="tab-pane fade" id="cpu" role="tabpanel">
                             <br>
                             <div class="row">
-                                <div class="col-md-12 text-center">                
-                                    <h1 class="text-white">CPU</h1>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 center" style="margin-left: 45px;">
-                                    <table class="table table-hover table-striped table-bordered text-white">
-                                        <thead class="warning-color-dark text-white">
-                                            <tr>
-                                                <th>Disponivel</th>
-                                                <th>Maior Uso</th>
-                                                <th>Horario Pico</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-white">
-                                                <td><span id="cpuDisponible"></span></td>
-                                                <td><span id="cpuGreather"></span>  </td>
-                                                <td><span id="cpuTime"></span>      </td>
-                                            </tr>                                
-                                        </tbody>
-                                    </table>                                        
-                                </div>
-                                
-                                <div class="col-md-1"></div>
-
-                                <div class="col-md-6">
-                                    <table class="table table-hover table-striped table-bordered text-white">
-                                        <thead class="warning-color-dark text-white">
-                                            <tr>
-                                                <th>Usuario</th>
-                                                <th>Uso Memoria</th>
-                                                <th>Uso Processador</th>
-                                                <th>Processo</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-white">
-                                                <td><span id="cpuUser"></span>      </td>
-                                                <td><span id="cpuUsed"></span>     %</td>
-                                                <td><span id="cpuProcessor"></span>%</td>
-                                                <td><span id="cpuProcess"></span>   </td>
-                                            </tr>                                
-                                        </tbody>
-                                    </table>                                    
-                                </div>
-                            </div>
+                                <div class="col-md-2"></div>
+                    
+                                <div class="col-md-8 center">
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">CPU</div>
+                                        <div class="card-body">
+                                            <p><b>Disponivel:</b> <span id="cpuDisponible"></span></p>
+                                            <p><b>Maior Uso:</b> <span id="cpuGreather"></span></p>
+                                            <p><b>Horario Pico:</b> <span id="cpuTime"></span></p><hr>
+                                            <p><b>Usuario:</b> <span id="cpuUser"></span></p>
+                                            <p><b>Uso Memoria:</b> <span id="cpuUsed"></span></p>
+                                            <p><b>Uso Processador:</b> <span id="cpuProcessor"></span></p>
+                                            <p><b>Processo:</b> <span id="cpuProcess"></span></p>
+                                        </div>
+                                    </div>
+                                </div>                                                            
+                            </div><br>
                         </div>
 
                         <div class="tab-pane fade" id="hd" role="tabpanel">
                             <br>
                             <div class="row">
-                                <div class="col-12 text-center">
-                                    <h1 class="text-white text-center">HD</h1>                                    
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">Hard Disk</div>
+                                        <div class="card-body">
+                                            <p><b>Tamanho:</b> <span id="hdSize"></span> GB</p>
+                                            <p><b>Usado:</b> <span id="hdUsed"></span> GB</p>
+                                            <p><b>Livre:</b> <span id="hdFree"></span> GB</p><hr>                                                
+                                        </div>
+                                    </div>
                                 </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-1"></div>
-                                <div class="col-md-5 center" style="margin-top: 30px">
-                                    <table class="table table-hover table-striped table-bordered text-white text-center">
-                                        <thead class="warning-color-dark text-white">
-                                            <tr>
-                                                <th>Tamanho</th>
-                                                <th>Usado</th>
-                                                <th>Livre</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="text-white">
-                                                <td><span id="hdSize"></span></td>
-                                                <td><span id="hdUsed"></span></td>
-                                                <td><span id="hdFree"></span></td>
-                                            </tr>                                
-                                        </tbody>
-                                    </table>                    
-                                </div>
-                                <div class="col-6 text-center">
-                                    <canvas id="hdChart" style="height: 200px;"></canvas>
-                                </div>                                                                                                
-                            </div><br>
+                                <div class="col-5 text-center">
+                                    <div class="card">
+                                        <div class="card-header warning-color-dark white-text">Hard Disk</div>
+                                        <div class="card-body">
+                                            <canvas id="hdChart" style="height: 200px;"></canvas>
+                                        </div>
+                                    </div>        
+                                </div>                                 
+                            </div><br>                                                                                               
                         </div>
                     </div>
                 </div>                

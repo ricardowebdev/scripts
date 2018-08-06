@@ -174,12 +174,12 @@ function hdChart(hd)
         		data: [hd.used, 
 	            	   hd.free],		    	
 	            backgroundColor: [
-					'rgba(153, 102, 255, 0.2)',
-                	'rgba(255, 159, 64, 0.2)'
+					'rgba(251, 18, 22, 0.6)',
+                	'rgba(104, 255, 125, 0.6)'
 	            ],
 	            borderColor: [
-	                'rgba(153, 102, 255, 1)',
-	                'rgba(255, 159, 64, 1)'
+	                'rgba(251, 18, 22, 1)',
+	                'rgba(104, 255, 125, 1)'
 	            ],	            
 	            label: 'Usado X Livre'
     		}],            

@@ -12,6 +12,6 @@ do
     source ./maxvalues.sh; #Calcula os maiores valores armazenados
     source ./writefile.sh;
 
-    sleep 10 
+    sleep 10; 
     clear   
 done
